@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors */
+  --color-forest-deep: #063D2C;
+  --color-forest-dark: #032B20;
+  --color-ivory: #F8F3E8;
+  --color-gold-champagne: #D5A64F;
+  --color-gold-soft: #F3D58A;
+
+  /* Typography Scale */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
+  --text-8xl: 6rem;        /* 96px */
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 0.75rem;   /* 12px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-3xl: 4rem;     /* 64px */
+  --spacing-4xl: 6rem;     /* 96px */
+  --spacing-5xl: 8rem;     /* 128px */
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow-gold: 0 0 20px rgba(213, 166, 79, 0.3);
+  --shadow-glow-gold-strong: 0 0 40px rgba(213, 166, 79, 0.5);
+
+  /* Animation Timing */
+  --duration-fast: 1s;
+  --duration-base: 1s;
+  --duration-slow: 1s;
+  --duration-slower: 1s;
+
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Z-index Scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-padding-top: 80px; /* Account for fixed navigation */
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-forest-dark);
+  color: var(--color-ivory);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Section scroll margin for navigation */
+section[id] {
+  scroll-margin-top: 80px;
+  position: relative;
+}
+
+.section-wave-divider {
+  height: 10px;
+  margin: -49px 0 -1px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.section-wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.section-wave-divider__line {
+  fill: none;
+  stroke: var(--color-gold-champagne);
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.section-wave-divider__line--main {
+  stroke-width: 2;
+  filter: drop-shadow(0 0 4px rgba(213, 166, 79, 0.45));
+}
+
+.section-wave-divider__line--soft {
+  stroke-width: 1;
+  opacity: 0.45;
+}
+
+/* Smooth scroll with reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-forest-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-champagne);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-soft);
+}
+
+/* Hide scrollbar for Experience section timeline */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--color-gold-champagne);
+  color: var(--color-forest-deep);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-gold-champagne);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glow-border {
+    border: 1px solid var(--color-gold-champagne);
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(243, 213, 138, 0.5);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-gold-champagne), var(--color-gold-soft));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Base Component Styles */
+@layer components {
+  .section-container {
+    min-height: 100vh;
+    padding: var(--spacing-4xl) var(--spacing-lg);
+    position: relative;
+  }
+
+  .section-container-short {
+    min-height: auto;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    position: relative;
+  }
+
+  .content-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .heading-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .button-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background-color: transparent;
+    border: 1px solid var(--color-gold-champagne);
+    color: var(--color-gold-champagne);
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--duration-base) var(--ease-out);
+  }
+
+  .button-primary:hover {
+    background-color: var(--color-gold-champagne);
+    color: var(--color-forest-deep);
+    box-shadow: var(--shadow-glow-gold-strong);
+  }
+
+  .tech-grid-pattern {
+    background-image:
+      linear-gradient(rgba(213, 166, 79, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(213, 166, 79, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
