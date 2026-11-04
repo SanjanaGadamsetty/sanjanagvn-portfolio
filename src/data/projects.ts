@@ -14,7 +14,7 @@ export const projects: Project[] = [
     title: 'Coding Profiles Of Sanjana',
     description:
       'A curated collection of Sanjana’s coding profiles, programming practice, and developer activity across online platforms.',
-    thumbnail: 'src/data/images/coding.png',
+    thumbnail: '/images/projects/coding.png',
     technologies: ['React', 'TypeScript', 'Coding Profiles'],
     githubUrl: 'https://github.com/SanjanaGadamsetty/Coding-Profiles-Of-Sanjana',
     liveWebsite: 'https://sanjanagadamsetty.github.io/Coding-Profiles-Of-Sanjana/',
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: 'Socratic Tutoring System',
     description:
       'An interactive tutoring platform designed to guide learners through questions and structured problem-solving.',
-    thumbnail: 'src/data/images/socratic.png',
+    thumbnail: '/images/projects/socratic.png',
     technologies: ['Education', 'Tutoring', 'AI'],
     githubUrl: 'https://github.com/SanjanaGadamsetty/socratic-tutoring-system',
   },
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: 'Secure Document Vault',
     description:
       'A secure application for storing, organizing, and managing important documents.',
-    thumbnail: 'src/data/images/vault.png',
+    thumbnail: '/images/projects/vault.png',
     technologies: ['Security', 'Documents', 'Web Application'],
     githubUrl: 'https://github.com/SanjanaGadamsetty/Secure-Document-Vault',
   },
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: 'Sanjana HP Portfolio',
     description:
       'A personal portfolio website showcasing projects, skills, experience, and professional work.',
-    thumbnail: 'src/data/images/hp.png',
+    thumbnail: '/images/projects/hp.png',
     technologies: ['React', 'Portfolio', 'Frontend'],
     githubUrl: 'https://github.com/SanjanaGadamsetty/SanjanaGadamsetty-HP-Portfolio',
     liveWebsite: 'https://sanjanagadamsetty.github.io/SanjanaGadamsetty-HP-Portfolio/',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     title: 'BookTracker',
     description:
       'A book tracking application for organizing reading lists and monitoring reading progress.',
-    thumbnail: 'src/data/images/book-tracker.png',
+    thumbnail: '/images/projects/book-tracker.png',
     technologies: ['Books', 'Tracking', 'Web Application'],
     githubUrl: 'https://github.com/SanjanaGadamsetty/booktracker',
   },

@@ -102,12 +102,12 @@ export const skillCategories: SkillCategory[] = [
     description: 'Professional certifications and achievements',
     skills: [],
     certificates: [
-      'src/data/certs/skill-certs/ai-practitioner.png',
-      'src/data/certs/skill-certs/ibm-sql.png',
-      'src/data/certs/skill-certs/nasscom-dsa.png',
-      'src/data/certs/skill-certs/nptel-python-ds.png',
-      'src/data/certs/skill-certs/oracle-ai-f.png',
-      'src/data/certs/skill-certs/unlox-cloud.png',
+      '/images/skill-certificates/ai-practitioner.png',
+      '/images/skill-certificates/ibm-sql.png',
+      '/images/skill-certificates/nasscom-dsa.png',
+      '/images/skill-certificates/nptel-python-ds.png',
+      '/images/skill-certificates/oracle-ai-f.png',
+      '/images/skill-certificates/unlox-cloud.png',
     ],
   },
 ];

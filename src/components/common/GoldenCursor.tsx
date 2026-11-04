@@ -57,22 +57,11 @@ const GoldenCursor = () => {
         'a, button, [role="button"], input, select, textarea, [tabindex]:not([tabindex="-1"])',
       );
       setIsHovering(Boolean(interactiveTarget));
-
-      const lightSectionIds = new Set(['about', 'experience', 'projects', 'achievements', 'coding']);
-      const sectionUnderPointer = document
-        .elementsFromPoint(event.clientX, event.clientY)
-        .find((element) => element.tagName === 'SECTION');
-      const isLightBackground = sectionUnderPointer
-        ? lightSectionIds.has(sectionUnderPointer.id)
-        : false;
-
-      haloRef.current?.classList.toggle('golden-cursor--light', isLightBackground);
     };
 
     const handlePointerLeave = () => {
       targetRef.current = { x: -100, y: -100 };
       setIsHovering(false);
-      haloRef.current?.classList.remove('golden-cursor--light');
     };
 
     const handleClick = (event: MouseEvent) => {
